@@ -2,7 +2,13 @@ const express = require("express");
 const morgan = require("morgan");
 const path = require("path");
 
+// app de express
 const app = express();
+
+// Habilitar PUG
+app.set("view engine", "pug");
+// Añadir la carpeta vistas
+app.set("views", path.join(__dirname, "views"));
 
 app.set("port", process.env.PORT || 3000);
 

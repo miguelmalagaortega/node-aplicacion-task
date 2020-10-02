@@ -1,5 +1,5 @@
 const proyectosHome = (req, res) => {
-  res.send("Hola mundo");
+  res.render("index");
 };
 
 module.exports = {
