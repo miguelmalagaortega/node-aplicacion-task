@@ -1,3 +1,6 @@
+// Importamos el modelo
+const Proyectos = require("../models/Proyectos");
+
 const proyectosHome = (req, res) => {
   res.render("index", {
     nombrePagina: "Proyectos",
@@ -10,7 +13,7 @@ const formularioProyecto = (req, res) => {
   });
 };
 
-const nuevoProyecto = (req, res) => {
+const nuevoProyecto = async (req, res) => {
   // Validar que tengamos algo en el input
   const { nombre } = req.body;
 
@@ -28,6 +31,8 @@ const nuevoProyecto = (req, res) => {
     });
   } else {
     // Insertar en la base de datos
+    const proyecto = await Proyectos.create({ nombre });
+    res.redirect("/");
   }
 
   // res.send("Enviaste el formulario");
