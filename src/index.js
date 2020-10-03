@@ -2,6 +2,9 @@ const express = require("express");
 const morgan = require("morgan");
 const path = require("path");
 
+// Helpers
+const helpers = require("./helpers");
+
 // Conexion a la base de datos
 const db = require("./config/db");
 // db.authenticate()
@@ -26,6 +29,13 @@ app.use(express.static(path.join(__dirname, "public")));
 app.set("view engine", "pug");
 // Añadir la carpeta vistas
 app.set("views", path.join(__dirname, "views"));
+
+// Pasar vardump  la aplicacion
+app.use((req, res, next) => {
+  // locals hace que se cree una variable en este archivo y se pueda usar en todos los demás archivos
+  res.locals.vardump = helpers.vardump;
+  next();
+});
 
 app.set("port", process.env.PORT || 3000);
 
