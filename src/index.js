@@ -2,6 +2,20 @@ const express = require("express");
 const morgan = require("morgan");
 const path = require("path");
 
+// Conexion a la base de datos
+const db = require("./config/db");
+// db.authenticate()
+//   .then(() => {
+//     console.log(`Conectado al servidor`);
+//   })
+//   .catch((error) => console.log(error));
+
+// Importar el modelo
+require("./models/Proyectos");
+db.sync()
+  .then(() => console.log("Conectado al servidor"))
+  .catch((error) => console.log(error));
+
 // app de express
 const app = express();
 
