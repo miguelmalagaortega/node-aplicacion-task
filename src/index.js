@@ -18,6 +18,9 @@ app.set("port", process.env.PORT || 3000);
 // Middlewares
 app.use(morgan("dev"));
 
+// Habilitar la lectura de datos de un formulario
+app.use(express.urlencoded({ extended: false }));
+
 // Rutas
 app.use(require("./routes/index.routes"));
 
