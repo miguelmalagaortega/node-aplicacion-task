@@ -19,6 +19,7 @@
     "webpack-cli": "^4.0.0"
   },
   "dependencies": {
+    "axios": "^0.20.0",
     "concurrently": "^5.3.0",
     "express": "^4.17.1",
     "express-validator": "^6.6.1",
@@ -27,6 +28,7 @@
     "pug": "^3.0.0",
     "sequelize": "^6.3.5",
     "shortid": "^2.2.15",
-    "slug": "^3.3.5"
+    "slug": "^3.3.5",
+    "sweetalert2": "^10.5.1"
   }
 }
