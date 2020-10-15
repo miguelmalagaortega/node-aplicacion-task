@@ -119,6 +119,24 @@ const actualizarProyecto = async (req, res) => {
   }
 };
 
+const eliminarProyecto = async (req, res, next) => {
+  // req, trae la información del cliente, podemos usar:
+  // query o params; el primero usa la variable definida en la vista (url) y el segundo usa la variable enviada desde axios en el archivo proyecto.js (proyectoUrl)
+  const { urlProyecto } = req.query;
+
+  const resultado = await Proyectos.destroy({ where: { url: urlProyecto } });
+
+  if (!resultado) {
+    return next();
+  }
+
+  // res.status(200).send("Proyecto eliminado correctamente");
+  res.status(200).json({
+    message: "Proyecto eliminado correctamente",
+    url: urlProyecto,
+  });
+};
+
 module.exports = {
   proyectosHome,
   formularioProyecto,
@@ -126,4 +144,5 @@ module.exports = {
   proyectoPorUrl,
   formularioEditar,
   actualizarProyecto,
+  eliminarProyecto,
 };

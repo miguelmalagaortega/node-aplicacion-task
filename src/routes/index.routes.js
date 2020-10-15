@@ -25,5 +25,7 @@ router.post(
   body("nombre").not().isEmpty().trim().escape(),
   proyectosController.actualizarProyecto
 );
+// Eliminar proyecto
+router.delete("/proyectos/:url", proyectosController.eliminarProyecto);
 
 module.exports = router;
