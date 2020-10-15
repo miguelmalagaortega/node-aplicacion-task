@@ -16,8 +16,8 @@ const Proyectos = db.define(
       primaryKey: true,
       autoIncrement: true,
     },
-    nombre: Sequelize.STRING,
-    url: Sequelize.STRING,
+    nombre: Sequelize.STRING(100),
+    url: Sequelize.STRING(100),
   },
   {
     // Eventos que se realizan antes, durante o después de una acción en el controlador.

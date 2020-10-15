@@ -66,6 +66,7 @@ body {
   border-radius: 5rem;
   padding-left: 2rem;
   color: black;
+  outline: none;
 }
 .campo.acciones {
   justify-content: space-between;
