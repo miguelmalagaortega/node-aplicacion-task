@@ -239,9 +239,9 @@ body.index {
   color: #00b762;
 }
 .alerta {
-  padding: 0.5rem;
+  padding: 0.2rem;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 0.5rem;
   /* font-weight: 900; */
   max-width: 500px;
   margin: 0 auto 1rem auto;
@@ -258,6 +258,7 @@ body.index {
 }
 .error p {
   color: red !important;
+  font-size: 15px;
 }
 .correcto {
   color: green;
