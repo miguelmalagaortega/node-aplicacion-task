@@ -4,6 +4,7 @@ const path = require("path");
 const flash = require("connect-flash");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
+const passport = require("./config/passport");
 
 // Helpers
 const helpers = require("./helpers");
@@ -54,6 +55,10 @@ app.use(
     saveUninitialized: false,
   })
 );
+
+// Iniciamos passport
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Pasar vardump  la aplicacion
 app.use((req, res, next) => {
